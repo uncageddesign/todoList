@@ -11,10 +11,19 @@
 </head>
 <body>
 	<div id="app">
+		<h1>ToDo's</h1>
+		<input type="text" v-model="newTask"/>
+		<input type="radio" id="high" name="priority" value="High">
+  	<label for="high">High</label>
+		<input type="radio" id="low" name="priority" value="Low">
+  	<label for="low">Low</label>
+		<button @click="saveNewTask">Save Task</button>
 
-
-		<input type="text" v-model="newItem" />
-		<button v-on:click="saveNewItem">Save New Item</button>
+		<ul>
+			<li v-for="(todo, index) in todos" :class="todo.priority ? 'high':'low' ">
+				<span>{{todo.name}}</span>
+			</li>
+		</ul>
 	</div>
 </body>
 </html>
