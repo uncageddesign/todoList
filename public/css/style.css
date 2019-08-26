@@ -43,3 +43,8 @@ li.low {
 	border: 2px solid green;
   color: green;
 }
+
+input[type="text"] {
+	padding: 10px;
+	width: 50%;
+}
